@@ -9,6 +9,7 @@ from scipy.spatial.distance import pdist
 import pyopencl as cl
 from numba import njit, prange
 
+#Creation date 01/02/2025
 # OpenCL setup
 ctx = cl.create_some_context()
 queue = cl.CommandQueue(ctx)
