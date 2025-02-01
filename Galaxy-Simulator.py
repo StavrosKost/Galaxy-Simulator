@@ -9,7 +9,7 @@ from scipy.spatial.distance import pdist
 import pyopencl as cl
 from numba import njit, prange
 
-#Creation date 01/02/2025
+#Creation date = 01/02/2025
 # OpenCL setup
 ctx = cl.create_some_context()
 queue = cl.CommandQueue(ctx)
@@ -66,6 +66,7 @@ def compute_min_distance(positions):
 trail_length = 100
 trails = [positions.copy() for _ in range(trail_length)]
 
+#updates the positions of particles after each change
 def update_dt(val):
     global dt
     dt = val
@@ -217,7 +218,7 @@ scatter = ax.scatter(
 )
 
 # Add central black hole glow
-black_hole_glow = ax.scatter([0], [0], [0], c='white', s=500, alpha=0.3, edgecolors='none')
+black_hole_glow = ax.scatter([0], [0], [0], c='black', s=500, alpha=0.7, edgecolors='none')
 
 # Add gas clouds using a 3D scatter plot
 gas_cloud_positions = np.random.uniform(-50, 50, (100, 3))  # Random positions for gas clouds
